@@ -1,0 +1,15 @@
+{
+  "name": "react-redux",
+  "version": "1.0.0",
+  "description": "lerning react-redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fuwenfang",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^3.3.1",
+    "webpack": "^1.12.14"
+  }
+}
