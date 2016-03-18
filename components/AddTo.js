@@ -1,6 +1,8 @@
 import React ,{ Component, PropTypes ,findDOMNode} from 'react'
 import ReactDOM from 'react-dom'
 
+
+
 export default class AddTo extends Component {
 	render(){
 		return (
@@ -9,8 +11,12 @@ export default class AddTo extends Component {
 			)
 	}
 	handleClick(e) {
-		const inputNode = findDOMNode(this.refs.inputVal);
+		const inputNode = ReactDOM.findDOMNode(this.refs.inputVal);
 		const inputVal = inputNode.value.trim();
 		this.props.AddText(inputVal);
 	}
+}
+
+AddTo.PropTypes ={
+	AddText:PropTypes.func.isRequired
 }

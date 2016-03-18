@@ -1,21 +1,19 @@
-import React ,{ Component, PropTypes } from 'react'
+import React from 'react'
+import {render} from 'react-dom'
 import ReactDOM from 'react-dom'
-import AddTo from components/AddTo.js
-import ToDoList from components/ToDoList.js
-import Footer from components/Footer.js
 
-export default class ShowApp extends Component {
-	render (){
-		return (
-			<div>
-				<AddTo AddText = {text=>console.log('Your add text is'+text)}>
-				</AddTo>
-				<ToDoList todos={}>
-				</ToDoList>
-				<Footer>
-				</Footer>
-			</div>
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import App from './container/App'
+import todoApp from './reducer'
 
-		)
-	}
-}
+let store = createStore(todoApp);
+
+let rootElement = document.getElementById('root')
+
+ReactDOM.render(
+  <Provider store = {store}>
+    <App />
+  </Provider>,
+  rootElement
+)
